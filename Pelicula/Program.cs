@@ -41,7 +41,10 @@ namespace Pelicula
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello");
+            Pelicula p1 = new Pelicula("Pinocho","MX",2022,"Guillermo del Toro");
+           p1.Imprime();
+           Pelicula p2 = new Pelicula("Titanic","EUA",1998,"Sheakspeare");
+           p2.Imprime();
         }
     }
 }
