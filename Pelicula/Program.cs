@@ -20,7 +20,7 @@ namespace Pelicula
         }
         public void Imprime()
         {
-     //       Console.WriteLine($"{titulo} ({año})");
+          Console.WriteLine($"{titulo} ({año})");
         }
     }
 /*
@@ -41,9 +41,9 @@ namespace Pelicula
     {
         static void Main(string[] args)
         {
-            Pelicula p1 = new Pelicula("Pinocho","MX",2022,"Guillermo del Toro");
+            Pelicula p1 = new Pelicula("Parasitos","Corea del Sur",2019,"Bong Joon-ho");
            p1.Imprime();
-           Pelicula p2 = new Pelicula("Titanic","EUA",1998,"Sheakspeare");
+           Pelicula p2 = new Pelicula("Green Book","EUA",2019,"Peter Farrelly");
            p2.Imprime();
         }
     }
