@@ -1,50 +1,59 @@
 ﻿using System;
 using System.Collections.Generic;
-namespace Pelicula
-{
-    public class Pelicula
+    namespace Pelicula
     {
+        public class  Pelicula {  
         //Campos
-        public string titulo;
-        public string pais;
-        public int año;
-        public string director;
+        private Int16 Año;
+        private string titulo; 
+        private string pais;
+        private string director;
        // private List<Actor> actores = new List<Actor>();
         //Constructores
-        //Métodos
-        public Pelicula(string t, string p, int a, string d){
-        this.titulo = t;
-        this.pais = p;
-        this.año = a;
-        this.director = d;
-        }
-        public void Imprime()
-        {
-          Console.WriteLine($"{titulo} ({año})");
-        }
-    }
-/*
-    public class Actor
-    {
-        //Propiedades
-        //Constructores
-        //Métodos 
-        public void Imprime()
-        {
-            Console.WriteLine($"{Nombre} ({Año})");
-        }
-    }
-    // Puedes probar tu código en Main() pero lo importante es que pase las pruebas
-    / */ 
+            public int? GetAño(){return Año;}
 
+            public void SetAño(Int16 a){Año = a;}
+            public string GetTitulo(){return Titulo;}
+
+            public void SetTitulo(string t){Titulo = t;}
+            public string Titulo { //Propiedad
+                get {return titulo;}
+                set {titulo = value;}
+                }
+            }
+            /*
+            public Pelicula(string t, string p, int a, string d){
+                titulo = t;
+                pais = p;
+                año = a;
+                director = d;
+            }
+
+            public void Imprime(){
+                Console.WriteLine($"{titulo} ({año})");
+            }
+        }
+
+            public class Actor{
+                //Propiedades
+                //Constructores
+                //Métodos
+
+            public void Imprime(){
+            Console.WriteLine($"{Nombre} ({Año})");
+            }
+        }
+    // Puedes probar tu código en Main() pero lo importante es que pase las pruebas
+    */ 
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Pelicula p1 = new Pelicula("Parasitos","Corea del Sur",2019,"Bong Joon-ho");
-           p1.Imprime();
-           Pelicula p2 = new Pelicula("Green Book","EUA",2019,"Peter Farrelly");
-           p2.Imprime();
+            Pelicula p1 = new Pelicula();
+            p1.SetTitulo("La La Land");
+            p1.SetAño(2016);
+            Console.WriteLine("{0}({1})", p1.GetTitulo(), p1.GetAño());
         }
     }
 }
+
