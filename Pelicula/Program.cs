@@ -10,7 +10,7 @@ using System.Collections.Generic;
         private string director;
        // private List<Actor> actores = new List<Actor>();
         //Constructores
-            public int? GetAño(){return Año;}
+            public int GetAño(){return Año;}
 
             public void SetAño(Int16 a){Año = a;}
             public string GetTitulo(){return Titulo;}
@@ -20,19 +20,26 @@ using System.Collections.Generic;
                 get {return titulo;}
                 set {titulo = value;}
                 }
+            public Pelicula(string t, Int16 a) {
+            t = Titulo;
+            a = Año;
             }
-            /*
-            public Pelicula(string t, string p, int a, string d){
-                titulo = t;
-                pais = p;
-                año = a;
-                director = d;
-            }
+            public Pelicula() {
 
+            }
+            public void Imprime(){
+            Console.WriteLine($"{Titulo} ({Año})");
+            }
+            }
+             /*public Pelicula(string titulo, Int16 año){
+                titulo = titulo;
+                año = año;
+            }
+            
             public void Imprime(){
                 Console.WriteLine($"{titulo} ({año})");
             }
-        }
+        
 
             public class Actor{
                 //Propiedades
