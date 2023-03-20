@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+
     namespace Pelicula
     {
         public class  Pelicula {  
@@ -8,9 +9,11 @@ using System.Collections.Generic;
         private string titulo; 
         private string pais;
         private string director;
-       // private List<Actor> actores = new List<Actor>();
+        
+        
+        //private List<Actor> actores = new List<Actor>();
         //Constructores
-            public int GetAño(){return Año;}
+            public Int16 GetAño(){return Año;}
 
             public void SetAño(Int16 a){Año = a;}
             public string GetTitulo(){return Titulo;}
@@ -20,8 +23,12 @@ using System.Collections.Generic;
                 get {return titulo;}
                 set {titulo = value;}
                 }
+            public Int16 año { //Propiedad
+                get {return Año;}
+                set {Año = value;}
+                }
             public Pelicula(string t, Int16 a) {
-            t = Titulo;
+            t = titulo;
             a = Año;
             }
             public Pelicula() {
@@ -31,15 +38,8 @@ using System.Collections.Generic;
             Console.WriteLine($"{Titulo} ({Año})");
             }
             }
-             /*public Pelicula(string titulo, Int16 año){
-                titulo = titulo;
-                año = año;
-            }
+             /*
             
-            public void Imprime(){
-                Console.WriteLine($"{titulo} ({año})");
-            }
-        
 
             public class Actor{
                 //Propiedades
@@ -56,10 +56,20 @@ using System.Collections.Generic;
     {
         static void Main()
         {
-            Pelicula p1 = new Pelicula();
+        List<Pelicula> peliculas = new List<Pelicula>();
+        
+        peliculas.Add(new Pelicula() { Titulo = "La La Land", año = 2016 });
+        peliculas.Add(new Pelicula() { Titulo = "Green Book", año = 2019 });
+        peliculas.Add(new Pelicula() { Titulo = "Parasite", año = 2019 });
+
+        foreach (Pelicula p in peliculas)
+        {
+            Console.WriteLine($"{p.Titulo} ({p.año})");
+        }
+           /* Pelicula p1 = new Pelicula();
             p1.SetTitulo("La La Land");
             p1.SetAño(2016);
-            Console.WriteLine("{0}({1})", p1.GetTitulo(), p1.GetAño());
+            Console.WriteLine("{0}({1})", p1.GetTitulo(), p1.GetAño()); */
         }
     }
 }
