@@ -3,15 +3,13 @@ using System.Collections.Generic;
 
     namespace Pelicula
     {
-        public class  Pelicula {  
+        public class Pelicula {  
         //Campos
-        private Int16 Año;
-        private string titulo; 
-        private string pais;
-        private string director;
-        
-        
-        //private List<Actor> actores = new List<Actor>();
+        private Int16 año {get; set;}
+        private string titulo {get; set;}
+        //private string pais;
+        //private string director;
+        private List<Actor> actores = new List<Actor>();
         //Constructores
             public Int16 GetAño(){return Año;}
 
@@ -23,53 +21,89 @@ using System.Collections.Generic;
                 get {return titulo;}
                 set {titulo = value;}
                 }
-            public Int16 año { //Propiedad
-                get {return Año;}
-                set {Año = value;}
-                }
-            public Pelicula(string t, Int16 a) {
-            t = titulo;
-            a = Año;
+            public Int16 Año { //Propiedad
+                get {return año;}
+                set {año = value;}
+                } 
+            public Pelicula(string titulo, Int16 año) {
+            this.titulo = titulo;
+            this.año = año;
             }
             public Pelicula() {
 
             }
             public void Imprime(){
-            Console.WriteLine($"{Titulo} ({Año})");
+            Console.WriteLine($"{titulo} ({año})");
+            }
+            public void ImprimeActores(){
+
+            foreach (Actor a in actores)
+             {
+               Console.WriteLine(a);
+            }
+                }
+            public void AgregaActor(Actor actor) {
+            actores.Add(actor);
             }
             }
-             /*
-            
+
+
+
+
 
             public class Actor{
                 //Propiedades
-                //Constructores
-                //Métodos
+                private string Nombre;
+                private Int16 AñoActor; 
+                
+                 public override string ToString()
+                {
+                return $"{Nombre} ({AñoActor})";
+                 }       
+                public Actor(string Nombre, Int16 AñoActor) {
+                    this.Nombre = Nombre;
+                    this.AñoActor = AñoActor;
+                }
+                
+               public Int16 GetAñoActor(){return AñoActor;}
 
-            public void Imprime(){
-            Console.WriteLine($"{Nombre} ({Año})");
-            }
+                public void SetAñoActor(Int16 a){AñoActor = a;}
+                public string GetNombre(){return Nombre;}
+
+                 
+                 
+                 public void SetNombre(string n){Nombre = n;}
+                 public string nombre { //Propiedad
+                    get {return Nombre;}
+                   set {Nombre = value;}
+                 }
+                public Int16 añoActor { //Propiedad
+                    get {return AñoActor;}
+                     set {AñoActor = value;}
+                }
+               
         }
     // Puedes probar tu código en Main() pero lo importante es que pase las pruebas
-    */ 
     class Program
     {
         static void Main()
         {
         List<Pelicula> peliculas = new List<Pelicula>();
         
-        peliculas.Add(new Pelicula() { Titulo = "La La Land", año = 2016 });
-        peliculas.Add(new Pelicula() { Titulo = "Green Book", año = 2019 });
-        peliculas.Add(new Pelicula() { Titulo = "Parasite", año = 2019 });
+        peliculas.Add(new Pelicula() { Titulo= "La La Land", Año = 2016 });
+        peliculas.Add(new Pelicula() { Titulo = "Green Book", Año = 2019 });
+        peliculas.Add(new Pelicula() { Titulo = "Parasite", Año = 2019 });
 
         foreach (Pelicula p in peliculas)
         {
-            Console.WriteLine($"{p.Titulo} ({p.año})");
+            Console.WriteLine($"{p.Titulo} ({p.Año})");
         }
-           /* Pelicula p1 = new Pelicula();
-            p1.SetTitulo("La La Land");
-            p1.SetAño(2016);
-            Console.WriteLine("{0}({1})", p1.GetTitulo(), p1.GetAño()); */
+          
+        Pelicula p1 = new Pelicula("La La Land", 2016);
+            p1.AgregaActor(new Actor("Ryan Gosling", 1980));
+            p1.AgregaActor(new Actor("Emma Stone", 1988));
+
+            p1.ImprimeActores();
         }
     }
 }

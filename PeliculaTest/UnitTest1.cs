@@ -1,4 +1,4 @@
-/*using System;
+using System;
 using System.IO;
 using Xunit;
 using Pelicula;
@@ -45,7 +45,7 @@ namespace PeliculaTest
                 Assert.Equal("La La Land (2016)", result);
             }
         }
-
+        
         [Fact]
         public void ImprimeActores()
         {
@@ -69,4 +69,4 @@ namespace PeliculaTest
             }
         }
     }
-} */
+} 
